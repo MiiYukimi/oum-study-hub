@@ -3,10 +3,164 @@
 <style>
 :root{color-scheme:light;--bg:#f4f6fd;--ink:#222b43;--muted:#65708a;--card:#fff;--line:#e2e6f0;--a:#6270d5}
 @media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#111826;--ink:#eef2fc;--muted:#a9b3cc;--card:#1a2536;--line:#344052;--a:#a7b4ff}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif}main{max-width:960px;margin:0 auto;padding:clamp(25px,5vw,70px) 18px 75px}.logo{font-size:13px;letter-spacing:.13em;font-weight:800;color:var(--a)}h1{font-size:clamp(32px,5vw,52px);line-height:1.17;margin:12px 0 13px}h2{font-size:21px;margin:0 0 7px}.intro{max-width:710px;color:var(--muted);font-size:17px;margin-bottom:30px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.card{display:flex;flex-direction:column;gap:10px;min-height:255px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:23px;text-decoration:none;color:inherit;box-shadow:0 12px 30px rgba(30,43,70,.04);transition:transform .15s,border-color .15s}.card:hover{transform:translateY(-3px);border-color:var(--a)}.tag{font-size:12px;color:var(--a);font-weight:800;letter-spacing:.06em}.card p{margin:0;color:var(--muted);font-size:14px;flex:1}.go{color:var(--a);font-weight:800}.footer{border-top:1px solid var(--line);margin-top:34px;padding-top:19px;font-size:13px;color:var(--muted)}.badge{background:color-mix(in srgb,var(--a) 13%,var(--card));padding:5px 9px;border-radius:100px;font-size:12px;display:inline-block}@media(max-width:620px){.grid{grid-template-columns:1fr}.card{min-height:220px}}</style></head>
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif}main{max-width:960px;margin:0 auto;padding:clamp(25px,5vw,70px) 18px 75px}.logo{font-size:13px;letter-spacing:.13em;font-weight:800;color:var(--a)}h1{font-size:clamp(32px,5vw,52px);line-height:1.17;margin:12px 0 13px}h2{font-size:21px;margin:0 0 7px}.intro{max-width:710px;color:var(--muted);font-size:17px;margin-bottom:30px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.card{display:flex;flex-direction:column;gap:10px;min-height:255px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:23px;text-decoration:none;color:inherit;box-shadow:0 12px 30px rgba(30,43,70,.04);transition:transform .15s,border-color .15s}.card:hover{transform:translateY(-3px);border-color:var(--a)}.tag{font-size:12px;color:var(--a);font-weight:800;letter-spacing:.06em}.card p{margin:0;color:var(--muted);font-size:14px;flex:1}.go{color:var(--a);font-weight:800}.footer{border-top:1px solid var(--line);margin-top:34px;padding-top:19px;font-size:13px;color:var(--muted)}.badge{background:color-mix(in srgb,var(--a) 13%,var(--card));padding:5px 9px;border-radius:100px;font-size:12px;display:inline-block}@media(max-width:620px){.grid{grid-template-columns:1fr}.card{min-height:220px}}
+
+.backup-panel{margin-top:31px;padding:24px;background:var(--card);border:1px solid var(--line);border-radius:20px;scroll-margin-top:22px}
+.backup-panel h2{margin:0 0 8px}.backup-panel p{color:var(--muted);margin:7px 0 17px;font-size:14px}
+.backup-actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.backup-button{font:inherit;font-size:15px;font-weight:800;padding:11px 18px;border-radius:11px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;min-height:46px}
+.backup-button.primary{background:var(--a);border-color:var(--a);color:#fff}.backup-button:hover{filter:brightness(.95)}.backup-button:focus-visible{outline:3px solid var(--a);outline-offset:3px}
+.backup-status{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:14px;color:var(--ink);white-space:pre-line}
+.backup-status[data-kind="error"]{border-color:#d66c76;color:#be454f}.backup-status[data-kind="success"]{border-color:#49a983;color:#23865b}
+.backup-note{font-size:12px!important;line-height:1.6;margin:10px 0 0!important}
+</style></head>
 <body><main><div class="logo">✦ OUM · PERSONAL STUDY SPACE</div><h1>Study Hub<br>考前複習中心</h1><p class="intro">兩個科目的互動式 MCQ 題庫。每章 30 題，英文出題、繁體中文解析。你可以先逐題練習，再挑戰模擬考。</p>
 <div class="grid">
 <a class="card" href="./entrepreneurship/"><span class="tag">MPU3223_V2 · ENTREPRENEURSHIP 2</span><h2>創業精神與創新</h2><span class="badge">10 Topics · 300 Questions</span><p>Entrepreneurship、Creativity & Innovation、Business Plan、Networking、Financial Planning 等。</p><span class="go">進入題庫 →</span></a>
 <a class="card" href="./media-society/"><span class="tag">ABCM2103 · MEDIA & SOCIETY</span><h2>資訊科技、媒體與社會</h2><span class="badge">9 Topics · 270 Questions</span><p>Media Systems、Global Media、ICT Development、Digital Divide、Information Flow、Media Effects 等。</p><span class="go">進入題庫 →</span></a>
 </div>
-<div class="footer"><strong>使用提醒：</strong>題目是根據你提供的課本改編的非官方練習題，不是 OUM 官方歷屆試題。答題進度與收藏由每部裝置的瀏覽器分別儲存，尚未跨裝置同步。這個 GitHub Pages 網站是公開連結，請勿在網站內填寫私人資料。</div></main></body></html>
+
+<section class="backup-panel" id="backup" aria-labelledby="backupTitle">
+  <div class="tag">BACKUP · MANUAL TRANSFER</div>
+  <h2 id="backupTitle">進度備份與跨裝置搬家 📦</h2>
+  <p>不用帳號，也不用設定雲端。一次匯出兩個科目的答題、錯題、收藏和模擬考成績，再到另一台裝置匯入即可。</p>
+  <div class="backup-actions">
+    <button class="backup-button primary" id="exportProgress" type="button">⬇ 匯出兩科進度（JSON）</button>
+    <button class="backup-button" id="importProgress" type="button">⬆ 匯入進度（JSON）</button>
+    <input id="progressFile" type="file" accept=".json,application/json" style="display:none" aria-label="選擇進度備份 JSON 檔案">
+  </div>
+  <div id="backupStatus" class="backup-status" role="status" aria-live="polite">正在讀取這台裝置的進度…</div>
+  <p class="backup-note">⚠ 匯入會<strong>取代</strong>本裝置中備份涵蓋的科目紀錄，不會自動合併。若兩台裝置都刷過不同題目，請先決定保留哪一份，並先備份。網站仍然不會自動同步；換裝置前需要重新匯出／匯入。</p>
+</section>
+
+<div class="footer"><strong>使用提醒：</strong>題目是根據你提供的課本改編的非官方練習題，不是 OUM 官方歷屆試題。答題進度與收藏保存在每部裝置的瀏覽器，可在上方手動匯出／匯入備份；不會自動跨裝置同步。這個 GitHub Pages 網站是公開連結，請勿在網站內填寫私人資料。</div></main>
+<script>
+(function(){
+  'use strict';
+  var definitions=[
+    {code:'MPU3223_V2',name:'Entrepreneurship 2',key:'mpu3223-mcq-300-v1',topicCount:10},
+    {code:'ABCM2103',name:'Information Technology, Media and Society',key:'abcm2103-mcq-270-v1',topicCount:9}
+  ];
+  var status=document.getElementById('backupStatus');
+  var picker=document.getElementById('progressFile');
+  function isRecord(v){return v!==null&&typeof v==='object'&&!Array.isArray(v);}
+  function report(msg,kind){status.textContent=msg;status.dataset.kind=kind||'info';}
+  function questionId(id,maxTopic){
+    var m=/^t(\d{1,2})q(\d{1,2})$/.exec(id);
+    return !!m&&Number(m[1])>=1&&Number(m[1])<=maxTopic&&Number(m[2])>=1&&Number(m[2])<=30;
+  }
+  function validate(state,def){
+    if(!isRecord(state))throw new Error(def.code+' 的資料不是有效紀錄。');
+    var fields=['theme','practice','attempted','mistakes','bookmarks','mocks','best','lastTopic'];
+    if(Object.keys(state).some(function(k){return !fields.includes(k);}))throw new Error(def.code+' 包含不支援的資料欄位。');
+    if(state.theme!==undefined&&state.theme!=='light'&&state.theme!=='dark')throw new Error('不支援的主題設定。');
+    if(state.lastTopic!==undefined&&(!Number.isInteger(state.lastTopic)||state.lastTopic<1||state.lastTopic>def.topicCount))throw new Error('Topic 進度無效。');
+    ['practice','attempted','mistakes','bookmarks'].forEach(function(field){
+      if(state[field]===undefined)return;
+      if(!isRecord(state[field]))throw new Error(field+' 格式不正確。');
+      Object.entries(state[field]).forEach(function(entry){
+        if(!questionId(entry[0],def.topicCount))throw new Error('題目編號不正確。');
+        var v=entry[1];
+        if(field==='practice'){
+          if(!isRecord(v)||!Number.isInteger(v.selected)||v.selected<0||v.selected>3||typeof v.correct!=='boolean')throw new Error('練習答案格式不正確。');
+        }else if(typeof v!=='boolean')throw new Error('進度標記格式不正確。');
+      });
+    });
+    ['mocks','best'].forEach(function(field){
+      if(state[field]===undefined)return;
+      if(!isRecord(state[field]))throw new Error(field+' 格式不正確。');
+      Object.entries(state[field]).forEach(function(entry){
+        var t=Number(entry[0]),v=entry[1];
+        if(!/^\d+$/.test(entry[0])||t<1||t>def.topicCount)throw new Error('模擬考 Topic 編號不正確。');
+        if(field==='best'){
+          if(!Number.isInteger(v)||v<0||v>30)throw new Error('最高分格式不正確。');
+        }else{
+          if(!isRecord(v)||!isRecord(v.picks)||typeof v.submitted!=='boolean'||(v.score!==null&&(!Number.isInteger(v.score)||v.score<0||v.score>30)))throw new Error('模擬考資料格式不正確。');
+          Object.entries(v.picks).forEach(function(p){
+            if(!questionId(p[0],def.topicCount)||!p[0].startsWith('t'+t+'q')||!Number.isInteger(p[1])||p[1]<0||p[1]>3)throw new Error('模擬考答案格式不正確。');
+          });
+        }
+      });
+    });
+    return true;
+  }
+  function getSubjects(){
+    var subjects={};
+    definitions.forEach(function(def){
+      var raw=localStorage.getItem(def.key);
+      if(raw===null)return;
+      var saved=JSON.parse(raw);
+      validate(saved,def);
+      subjects[def.code]=saved;
+    });
+    return subjects;
+  }
+  function summary(){
+    try{
+      var subjects=getSubjects();
+      var lines=definitions.map(function(def){
+        var v=subjects[def.code];
+        if(!v)return def.code+'：尚無紀錄';
+        var qs=new Set(Object.keys(v.practice||{}).concat(Object.keys(v.attempted||{})));
+        var wrong=Object.values(v.mistakes||{}).filter(Boolean).length;
+        var saved=Object.values(v.bookmarks||{}).filter(Boolean).length;
+        var exams=Object.values(v.mocks||{}).filter(function(m){return m&&m.submitted;}).length;
+        return def.code+'：已作答 '+qs.size+' 題 · 錯題 '+wrong+' · 收藏 '+saved+' · 完成模擬考 '+exams+' 章';
+      });
+      report('本裝置的進度：\n'+lines.join('\n'));
+    }catch(e){report('無法讀取部分本機紀錄：'+e.message,'error');}
+  }
+  function createDownload(subjects){
+    var backup={format:'oum-study-hub-progress',version:1,createdAt:new Date().toISOString(),subjects:subjects};
+    var blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json;charset=utf-8'});
+    var url=URL.createObjectURL(blob),a=document.createElement('a');
+    a.href=url;
+    a.download='OUM_Study_Hub_Backup_'+new Date().toISOString().slice(0,10)+'.json';
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(function(){URL.revokeObjectURL(url);},2000);
+  }
+  document.getElementById('exportProgress').addEventListener('click',function(){
+    try{
+      var subjects=getSubjects();
+      if(!Object.keys(subjects).length){report('目前沒有可匯出的進度。請先進入任一科作答或收藏題目。','error');return;}
+      createDownload(subjects);
+      report('備份檔已開始下載（'+Object.keys(subjects).join('、')+'）。請把 JSON 檔保存在手機／雲端硬碟，然後到另一台裝置匯入。','success');
+    }catch(e){report('匯出失敗：'+e.message,'error');}
+  });
+  document.getElementById('importProgress').addEventListener('click',function(){picker.value='';picker.click();});
+  picker.addEventListener('change',async function(){
+    if(!picker.files||!picker.files.length)return;
+    var file=picker.files[0];
+    try{
+      if(file.size>2000000)throw new Error('檔案太大，這不是正常的進度備份檔。');
+      var raw=await file.text();
+      var data=JSON.parse(raw);
+      if(!isRecord(data)||data.format!=='oum-study-hub-progress'||data.version!==1||!isRecord(data.subjects))throw new Error('這不是 OUM Study Hub 支援的備份檔。');
+      var names=Object.keys(data.subjects),approved={};
+      if(!names.length||names.some(function(n){return !definitions.some(function(d){return d.code===n;});}))throw new Error('備份檔沒有支援的科目資料。');
+      definitions.forEach(function(def){
+        if(!Object.prototype.hasOwnProperty.call(data.subjects,def.code))return;
+        validate(data.subjects[def.code],def);
+        approved[def.key]=JSON.stringify(data.subjects[def.code]);
+      });
+      var message='你要匯入 '+names.join('、')+' 的進度嗎？\n\n注意：會【覆蓋】這台裝置中相同科目的舊紀錄，不能自動合併。\n\n如果這台裝置已經做過題，建議先按取消並匯出一份備份。';
+      if(!confirm(message)){report('已取消匯入，本機進度沒有更改。');return;}
+      var previous={};
+      Object.keys(approved).forEach(function(key){previous[key]=localStorage.getItem(key);});
+      try{
+        Object.keys(approved).forEach(function(key){localStorage.setItem(key,approved[key]);});
+      }catch(saveError){
+        Object.keys(previous).forEach(function(key){
+          try{if(previous[key]===null)localStorage.removeItem(key);else localStorage.setItem(key,previous[key]);}catch(ignore){}
+        });
+        throw saveError;
+      }
+      summary();
+      report('✓ 匯入完成！已恢復 '+names.join('、')+' 的紀錄。\n\n打開科目網站就可以看到匯入後的進度。','success');
+    }catch(e){report('匯入失敗，本機進度沒有被覆蓋：'+e.message,'error');}
+    finally{picker.value='';}
+  });
+  summary();
+})();
+</script>
+</body></html>
